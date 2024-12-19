@@ -49,7 +49,7 @@ chatimg.addEventListener("click", () => {
 async function generateApiResponse(aiChatBox) {
   const textElement = aiChatBox.querySelector(".text");
   try {
-    const response = await fetch("https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=AIzaSyC-Nz1D-eIBUbhZwf0MO9Y6twdW1TPJx3Y", {
+    const response = await fetch("https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
