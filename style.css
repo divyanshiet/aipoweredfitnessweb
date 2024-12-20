@@ -97,7 +97,7 @@ justify-content: center;
 }
 .chat-box{
 position: absolute;
-width: 30%;
+width: 32%;
 height: 80%;
 bottom: 10%;
 right:5%;
@@ -235,5 +235,18 @@ backdrop-filter: blur(5px);
     border-radius: 50%;
 }
 .virtual-assistant img{
+    cursor: pointer;
+}
+.close-speak-page{
+    width: 40px;
+    height: 40px;
+    font-size: 32px;
+    margin-left: 93%;
+    margin-top: -70px;
+    cursor: pointer;
+    background-color: rgb(77, 145, 255);
+    border: 1px solid rgb(77, 145, 255);
+}
+button:hover{
     cursor: pointer;
 }

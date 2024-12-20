@@ -1,13 +1,3 @@
-// Make sure to include these imports:
-// const { GoogleGenerativeAI } = require( "@google/generative-ai");
-// require('dotenv').config();
-// const genAI = new GoogleGenerativeAI(process.env.API_KEY);
-// const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
-
-// const result = await model.generateContent(prompt);
-// console.log(result.response.text());
-
-
 let select = document.querySelector(".select-heading");
 let arrow = document.querySelector(".select-heading img");
 let options = document.querySelector(".options");
@@ -44,7 +34,6 @@ chatimg.addEventListener("click", () => {
   }
 });
 
-// let Api_url= paste your api url from google gemini website
 
 async function generateApiResponse(aiChatBox) {
   const textElement = aiChatBox.querySelector(".text");
@@ -86,7 +75,7 @@ function showLoading() {
   generateApiResponse(aiChatBox);
 }
 
-chatbtn.addEventListener("click", () => {
+function chatbutton(){
   h1.style.display = "none";
   userMessage = prompt.value;
   const html = `<p class="text"></p>`;
@@ -95,7 +84,15 @@ chatbtn.addEventListener("click", () => {
   chatContainer.appendChild(userChatBox);
   prompt.value = "";
   setTimeout(showLoading, 500);
+}
+chatbtn.addEventListener("click", chatbutton);
+prompt.addEventListener("keypress", (event) => {
+  if (event.key === "Enter") {
+    event.preventDefault();
+    chatbtn.click();
+  }
 });
+
 
 // virtual Assistant
 
@@ -198,4 +195,9 @@ function takeCommand(message) {
 ai.addEventListener("click", () => {
   recognition.start();
   speakpage.style.display = "flex";
+});
+let closeSpeakPageButton = document.querySelector(".close-speak-page");
+
+closeSpeakPageButton.addEventListener("click", () => {
+  speakpage.style.display = "none";
 });
